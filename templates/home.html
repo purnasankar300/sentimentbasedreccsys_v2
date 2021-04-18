@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+    <h2>Please find below products  {{user}}</h2>
+    
+    
+        <table >
+            <tr>
+                <th>Product</th>
+                <th>Positive_review_%</th>
+                <th>Negative_review_%</th>
+            </tr>
+            {% for index,pro in predict.iterrows() %}
+            <tr>
+                <td>{{pro['Product']}}</td>
+                <td>{{pro['Positive%']}}</td>
+                <td>{{pro['Negative%']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    
+    
+
+{% endblock %}
